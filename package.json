@@ -1,0 +1,17 @@
+{
+	"name": "homewrok",
+	"version": "1.0.0",
+	"description": "",
+	"main": "main.js",
+	"scripts": {
+		"dev": "parcel ./src/index.html"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"parcel": "^2.6.0"
+	},
+	"devDependencies": {
+		"parcel-plugin-pre-clean": "^1.0.1"
+	}
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>traffic Light</title>
+</head>
+
+<body>
+  <div id="Board">
+    <div class="container">
+      <div class="light" id="R"></div>
+      <div class="light" id="Y"></div>
+      <div class="light" id="G"></div>
+    </div>
+  </div>
+  <script src="./index2.js">
+  </script>
+  <style>
+    #Board {
+      width: 550px;
+      height: 280px;
+      background-color: #898989;
+      margin: 0 auto;
+    }
+
+    .container {
+      margin: 0px auto;
+      width: fit-content;
+    }
+
+    .light {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      display: inline-block;
+      margin: 80px 20px;
+      opacity: 0.5;
+    }
+
+    .on {
+      position: 1;
+    }
+
+    #R {
+      background-color: #FC4321;
+    }
+
+    #G {
+      background-color: #7CA052;
+    }
+
+    #Y {
+      background-color: #FDBF3F;
+    }
+  </style>
+</body>
+
+</html>
