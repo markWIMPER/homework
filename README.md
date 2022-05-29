@@ -1,1 +1,4 @@
 # homework
+
+yarn
+yarn dev
