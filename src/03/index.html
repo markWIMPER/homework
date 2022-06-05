@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>寻路问题</title>
+</head>
+
+<body>
+  <div id="container"></div>
+  <button onclick="localStorage.map = JSON.stringify(map)">save</button>
+  <style>
+    body {
+      display: block;
+      margin: 0;
+      padding: 0;
+      line-height: 10px;
+    }
+
+    .cell {
+      display: inline-block;
+      /* width: 1px;
+      height: 1px; */
+      background-color: gray;
+      border-bottom: solid 1px white;
+      border-right: solid 1px white;
+      vertical-align: middle;
+      padding: 5px;
+    }
+
+    #container {
+      width: 1407px;
+      height: 1000px;
+    }
+  </style>
+  <script>
+    // 遇到点问题，使用ts的方式独立出来发现部分语句不执行，暂不清楚是什么原因(解决了，编译打包长时间没启动失效了，重启之后解决)
+    let map = localStorage.map ? JSON.parse(localStorage.map) : new Array(10000).fill(0);
+    // 画图;
+    let container = document.getElementById('container');
+    console.log(localStorage);
+
+    for (let i = 0; i < 100; i++) {
+      for (let j = 0; j < 100; j++) {
+        let cell = document.createElement('div');
+        cell.classList.add('cell');
+
+        if (map[i * 100 + j] == 1) {
+          console.log('缓存', i * 100 + j);
+
+          cell.style.backgroundColor = 'black';
+        }
+        cell.addEventListener('mouseover', () => {
+          if (mouse) {
+            if (clear) {
+              cell.style.backgroundColor = '';
+              map[i * 100 + j] = 0;
+            } else {
+              cell.style.backgroundColor = 'black';
+              map[i * 100 + j] = 1;
+            }
+          }
+        });
+        container.appendChild(cell);
+      }
+      let mouse = false;
+      let clear = false;
+
+      document.addEventListener('mousedown', e => {
+        mouse = true;
+        clear = e.which === 3;
+      });
+
+      document.addEventListener('mouseup', () => (mouse = false));
+      document.addEventListener('contextmenu', e => e.preventDefault());
+    }
+
+  </script>
+</body>
+
+</html>

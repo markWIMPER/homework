@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>简单寻路</title>
+</head>
+
+<body>
+  <div id="container"></div>
+
+  <div class="control">
+    <button class="button" id="save" onclick="localStorage.map = JSON.stringify(map)">save</button>
+    <button class="button" id="queue" onclick="localStorage.map = JSON.stringify(map)">使用队列结构进行查找</button>
+    <button class="button" id="stack" onclick="localStorage.map = JSON.stringify(map)">使用栈结构进行查找</button>
+    <button class="button" id="sorted" onclick="localStorage.map = JSON.stringify(map)">使用排序</button>
+    <button class="button" id="BinaryHeap" onclick="localStorage.map = JSON.stringify(map)">使用二叉树排序</button>
+  </div>
+  <style>
+    body {
+      display: block;
+      margin: 0;
+      padding: 0;
+      /* line-height: 7px; */
+    }
+
+    .cell {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background-color: #81D8D0;
+      border-bottom: solid 1px white;
+      border-right: solid 1px white;
+      vertical-align: middle;
+    }
+
+    #container {
+      width: 701px;
+      display: flex;
+      flex-wrap: wrap;
+      line-height: 7px;
+      margin: 0 auto;
+    }
+
+    .control {
+      width: 100%;
+      text-align: center;
+      /* background-color: #81D8D0; */
+    }
+
+    .button {
+      /* margin: 5%; */
+      width: 300px;
+      margin: 20px;
+      text-align: center;
+      height: 40px;
+      outline: none;
+      border: none;
+      background-color: skyblue;
+      color: #FFFFFF;
+    }
+  </style>
+  <script src="./index2.ts" lang="ts"></script>
+</body>
+
+</html>
