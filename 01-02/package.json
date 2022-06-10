@@ -5,7 +5,7 @@
 	"main": "main.js",
 	"type": "module",
 	"scripts": {
-		"dev": "parcel ./src/03/index2.html"
+		"dev": "parcel ./src/index.html"
 	},
 	"author": "",
 	"license": "ISC",
